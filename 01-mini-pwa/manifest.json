@@ -1,0 +1,12 @@
+{
+    "name" : "DevFest Nantes 2018",
+    "display": "standalone",
+    "start_url": "/",
+    "icons": [
+        {
+            "src" : "monokuma.png",
+            "sizes": "800x800",
+            "type": "image/png"
+        }
+    ]
+}
