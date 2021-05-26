@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Session } from 'src/app/model/session';
+import { ModalController } from '@ionic/angular';
 import { SessionService } from 'src/app/services/session.service';
+import { SessionDetailModalComponent } from '../session-detail-modal/session-detail-modal.component';
 
 @Component({
   selector: 'app-session-detail',
@@ -10,31 +11,27 @@ import { SessionService } from 'src/app/services/session.service';
 })
 export class SessionDetailComponent implements OnInit {
 
-  session : any;
+  sessions: any;
+  id: number;
 
-  constructor(private sessionService : SessionService, private activateRoute: ActivatedRoute) { }
+  constructor(private sessionService: SessionService, private activateRoute: ActivatedRoute,
+    private modalController : ModalController) { }
 
   ngOnInit() {
-    this.getSessionById();
-    
-  }
-
-  // On récupère l'id envoyé dans l'url pour trouvé la session en cours
-  getSessionById(){
     this.activateRoute.params.subscribe(res => {
-      this.sessionService.getById(res.id).subscribe(params => {
-        this.populateSession(params.id);
-      })
-    });
-  }
-
-  // Remplit une Session grâce à un id
-  populateSession(id : number) {
-    this.sessionService.getById(id).subscribe((res: any) => {
-      this.session = res.body;
-      console.log(this.session);
-      
+      this.id=res.id;
     })
+    this.sessions = this.sessionService.getById(this.id, this.sessions)
+    console.log(this.sessions);
   }
 
+  async showModal() {
+    const modal = await this.modalController.create({
+      component: SessionDetailModalComponent,
+      componentProps: {
+        session: this.sessions
+      }
+    })
+    await modal.present();
+  }
 }

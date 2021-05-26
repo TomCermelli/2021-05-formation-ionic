@@ -17,7 +17,9 @@ export class PresentateurService {
     return this.http.get<Presentateur[]>(this.baseUrl);
   }
 
-  getById(id : number){
-    return this.http.get<Presentateur>(this.baseUrl + id);
+  getById(id: number, presentateurs: any){
+    presentateurs = JSON.parse(localStorage.getItem("presentateurCache"));
+    const presentateur = presentateurs.find(presentateur => presentateur.id == id);
+    return presentateur;
   }
 }

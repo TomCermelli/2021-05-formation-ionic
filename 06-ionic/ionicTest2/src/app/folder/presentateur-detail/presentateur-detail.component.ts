@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Presentateur } from 'src/app/model/presentateur';
 import { PresentateurService } from 'src/app/services/presentateur.service';
 
 @Component({
@@ -10,28 +9,17 @@ import { PresentateurService } from 'src/app/services/presentateur.service';
 })
 export class PresentateurDetailComponent implements OnInit {
 
-  presentateur : any;
+  presentateurs : any;
+  id : number;
 
   constructor(private presentateurService : PresentateurService ,private activateRoute: ActivatedRoute) { }
 
-  ngOnInit() {}
 
-  // On récupère l'id envoyé dans l'url pour trouvé le présentateur en cours
-  getPresentateurById(){
+  ngOnInit() {
     this.activateRoute.params.subscribe(res => {
-      this.presentateurService.getById(res.id).subscribe(params => {
-        this.populatePresentateur(params.id);
-      })
-    });
-  }
-
-  // Remplit une Session grâce à un id
-  populatePresentateur(id : number) {
-    this.presentateurService.getById(id).subscribe((res: any) => {
-      this.presentateur = res.body;
-      console.log(this.presentateur);
-      
+      this.id=res.id;
     })
+    this.presentateurs = this.presentateurService.getById(this.id, this.presentateurs)
+    console.log(this.presentateurs);
   }
-
 }

@@ -8,7 +8,7 @@ export class ConferenceService {
   baseUrl: string;
 
   constructor(private http : HttpClient) {
-    this.baseUrl = 'https://devfest-nantes-2018-api.cleverapps.io/schedule/'
+    this.baseUrl = 'https://devfest-nantes-2018-api.cleverapps.io/schedule'
   }
 
   getAll() {

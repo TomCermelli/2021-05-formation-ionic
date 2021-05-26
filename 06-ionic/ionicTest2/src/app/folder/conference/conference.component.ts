@@ -18,11 +18,9 @@ export class ConferenceComponent implements OnInit {
 
   searchDate(){
     this.conferenceService.getAll().subscribe((res : any) => {
-      this.conferences = res.body;
+      this.conferences = res;
       console.log(this.conferences);
-      console.log(res.body);
-      
-      
+      console.log(res);
     })
   }
 

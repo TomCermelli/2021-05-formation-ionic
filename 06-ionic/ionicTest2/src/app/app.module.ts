@@ -8,10 +8,20 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { ServicesModule } from './services/services.module';
 import { HttpClientModule } from '@angular/common/http';
+import { SessionComponent } from './folder/session/session.component';
+import { PresentateurComponent } from './folder/presentateur/presentateur.component';
+import { SessionDetailComponent } from './folder/session-detail/session-detail.component';
+import { PresentateurDetailComponent } from './folder/presentateur-detail/presentateur-detail.component';
+import { ConferenceComponent } from './folder/conference/conference.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ConferenceComponent,
+    SessionComponent,
+    SessionDetailComponent,
+    PresentateurComponent,
+    PresentateurDetailComponent
   ],
   entryComponents: [
 

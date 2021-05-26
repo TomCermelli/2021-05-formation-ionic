@@ -1,6 +1,17 @@
-<section class="posData container">
-  <section *ngFor="let session of sessions" class="titlePos">
-    <ion-button routerLink="{{session.id}}">{{session.title}}</ion-button>
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Sessions</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <section class="posData container">
+    <ion-list>
+      <ion-item *ngFor="let session of sessions" class="titlePos">
+        <ion-button routerLink="{{session.id}}">{{session.title}}</ion-button>
+      </ion-item>
+    </ion-list>
   </section>
-</section>
-
+</ion-content>

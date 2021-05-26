@@ -3,9 +3,16 @@
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title>Présentateur</ion-title>
+    <ion-title>Présentateur Details</ion-title>
   </ion-toolbar>
 </ion-header>
-
-<h2>{{presentateur.id}}</h2>
-<p></p>
+<ion-content>
+  <section>
+    <section class="logoPos">
+      <h2>{{presentateurs.name}} - {{presentateurs.country}}</h2>
+      <ion-img src="https://devfest2018.gdgnantes.com{{presentateurs.companyLogo}}" width="80px" heigth="80"></ion-img>
+    </section>
+    <small> {{presentateurs.company}}</small>
+    <article>{{presentateurs.bio}}</article>
+  </section>
+</ion-content>

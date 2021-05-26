@@ -1,5 +1,17 @@
-<section class="posData container">
-  <section *ngFor="let presentateur of presentateurs" class="titlePos">
-    <ion-button routerLink="{{presentateur.id}}">{{presentateur.name}}</ion-button>
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Présentateurs</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <section class="posData container">
+    <section *ngFor="let presentateur of presentateurs" class="titlePos">
+      <ion-button routerLink="{{presentateur.id}}">{{presentateur.name}}</ion-button>
+    </section>
   </section>
-</section>
+</ion-content>
+
+

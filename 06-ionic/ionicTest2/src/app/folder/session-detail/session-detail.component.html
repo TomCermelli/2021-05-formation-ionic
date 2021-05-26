@@ -3,10 +3,21 @@
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title>Session</ion-title>
+    <ion-title>Sessions Details</ion-title>
   </ion-toolbar>
 </ion-header>
+<ion-content>
+  <section>
+    <section *ngIf="sessions.titleMobile; else title">
+      <h2>{{sessions.titleMobile}}</h2>
+      <small>{{sessions.category}} <span *ngIf="sessions.complexity">- {{sessions.complexity}}</span></small>
+    </section>
+    <ng-template #title>
+      <h2>{{sessions.title}}</h2>
+      <small>{{sessions.category}} <span *ngIf="sessions.complexity">- {{sessions.complexity}}</span></small>
+    </ng-template>
+    <article *ngIf="sessions.description">{{sessions.description}}</article>
+    <ion-button (click)="showModal()" expand="block">Note</ion-button>
 
-
-<h2>Title</h2>
-<p>Description</p>
+  </section>
+</ion-content>

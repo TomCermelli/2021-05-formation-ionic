@@ -1,21 +1,26 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { ConferenceComponent } from './folder/conference/conference.component';
 import { PresentateurDetailComponent } from './folder/presentateur-detail/presentateur-detail.component';
 import { PresentateurComponent } from './folder/presentateur/presentateur.component';
 import { SessionDetailComponent } from './folder/session-detail/session-detail.component';
+import { SessionComponent } from './folder/session/session.component';
 
 const routes: Routes = [
   {
-    path: '', redirectTo: 'folder/Conférence', pathMatch: 'full'
+    path: '', component: ConferenceComponent, pathMatch: 'full'
   },
   {
-    path: 'folder/:id', loadChildren: () => import('./folder/folder.module').then(m => m.FolderPageModule)
+    path: 'presentateurs', component: PresentateurComponent,
   },
   {
-    path: 'folder/Présentateur/:id', component: PresentateurDetailComponent,
+    path: 'presentateurs/:id', component: PresentateurDetailComponent,
   },
   {
-    path: 'folder/Session/:id', component: SessionDetailComponent,
+    path: 'sessions', component: SessionComponent,
+  },
+  {
+    path: 'sessions/:id', component: SessionDetailComponent,
   }
 ];
 
