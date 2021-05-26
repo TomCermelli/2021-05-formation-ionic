@@ -1,0 +1,6 @@
+<section class="posData container">
+  <section *ngFor="let session of sessions" class="titlePos">
+    <ion-button routerLink="{{session.id}}">{{session.title}}</ion-button>
+  </section>
+</section>
+

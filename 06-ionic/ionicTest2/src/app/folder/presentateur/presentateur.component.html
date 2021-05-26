@@ -1,0 +1,5 @@
+<section class="posData container">
+  <section *ngFor="let presentateur of presentateurs" class="titlePos">
+    <ion-button routerLink="{{presentateur.id}}">{{presentateur.name}}</ion-button>
+  </section>
+</section>

@@ -1,0 +1,14 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>{{ folder }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<div id="container">
+  <app-conference *ngIf="folder=='Conférence'"></app-conference>
+  <app-presentateur *ngIf="folder=='Présentateur'"></app-presentateur>
+  <app-session *ngIf="folder=='Session'"></app-session>
+</div>
