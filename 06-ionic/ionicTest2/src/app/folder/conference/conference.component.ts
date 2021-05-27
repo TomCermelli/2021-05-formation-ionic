@@ -8,7 +8,8 @@ import { ConferenceService } from 'src/app/services/conference.service';
 })
 export class ConferenceComponent implements OnInit {
 
-  conferences : [] = []
+  debut : any;
+  fin : any;
 
   constructor(private conferenceService : ConferenceService) { }
 
@@ -18,8 +19,8 @@ export class ConferenceComponent implements OnInit {
 
   searchDate(){
     this.conferenceService.getAll().subscribe((res : any) => {
-      this.conferences = res;
-      console.log(this.conferences);
+      this.debut = res[0];
+      this.fin = res[1];
       console.log(res);
     })
   }

@@ -6,13 +6,13 @@ import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-import { ServicesModule } from './services/services.module';
 import { HttpClientModule } from '@angular/common/http';
 import { SessionComponent } from './folder/session/session.component';
 import { PresentateurComponent } from './folder/presentateur/presentateur.component';
 import { SessionDetailComponent } from './folder/session-detail/session-detail.component';
 import { PresentateurDetailComponent } from './folder/presentateur-detail/presentateur-detail.component';
 import { ConferenceComponent } from './folder/conference/conference.component';
+import { SessionDetailModalComponent } from './folder/session-detail-modal/session-detail-modal.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +20,7 @@ import { ConferenceComponent } from './folder/conference/conference.component';
     ConferenceComponent,
     SessionComponent,
     SessionDetailComponent,
+    SessionDetailModalComponent,
     PresentateurComponent,
     PresentateurDetailComponent
   ],
@@ -34,7 +35,6 @@ import { ConferenceComponent } from './folder/conference/conference.component';
   ],
   providers: [
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
-    ServicesModule
   ],
   bootstrap: [
     AppComponent
