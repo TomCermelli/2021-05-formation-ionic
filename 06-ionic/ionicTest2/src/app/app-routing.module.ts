@@ -5,6 +5,7 @@ import { PresentateurDetailComponent } from './folder/presentateur-detail/presen
 import { PresentateurComponent } from './folder/presentateur/presentateur.component';
 import { SessionDetailComponent } from './folder/session-detail/session-detail.component';
 import { SessionComponent } from './folder/session/session.component';
+import { TelephoneComponent } from './folder/telephone/telephone.component';
 
 const routes: Routes = [
   {
@@ -21,6 +22,9 @@ const routes: Routes = [
   },
   {
     path: 'sessions/:id', component: SessionDetailComponent,
+  },
+  {
+    path: 'telephone', component: TelephoneComponent,
   }
 ];
 

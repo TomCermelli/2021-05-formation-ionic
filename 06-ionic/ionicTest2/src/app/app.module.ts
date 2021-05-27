@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
 
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
+import { Device } from '@ionic-native/device/ngx';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -13,6 +14,7 @@ import { SessionDetailComponent } from './folder/session-detail/session-detail.c
 import { PresentateurDetailComponent } from './folder/presentateur-detail/presentateur-detail.component';
 import { ConferenceComponent } from './folder/conference/conference.component';
 import { SessionDetailModalComponent } from './folder/session-detail-modal/session-detail-modal.component';
+import { TelephoneComponent } from './folder/telephone/telephone.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,8 @@ import { SessionDetailModalComponent } from './folder/session-detail-modal/sessi
     SessionDetailComponent,
     SessionDetailModalComponent,
     PresentateurComponent,
-    PresentateurDetailComponent
+    PresentateurDetailComponent,
+    TelephoneComponent
   ],
   entryComponents: [
 
@@ -35,6 +38,8 @@ import { SessionDetailModalComponent } from './folder/session-detail-modal/sessi
   ],
   providers: [
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    Device
+    
   ],
   bootstrap: [
     AppComponent
