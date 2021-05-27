@@ -1,0 +1,6 @@
+{
+  "appId": "com.capacitorTest",
+  "appName": "capacitorTest",
+  "webDir": "www",
+  "bundledWebRuntime": true
+}
