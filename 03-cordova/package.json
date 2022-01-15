@@ -30,6 +30,6 @@
   "dependencies": {
     "cordova-plugin-device": "2.0.3",
     "cordova-plugin-network-information": "2.0.2",
-    "shelljs": "^0.8.4"
+    "shelljs": "^0.8.5"
   }
 }
